@@ -1,5 +1,6 @@
 import GlobalStyles from './styles/global';
-import {useState} from 'react'
+import {useState} from 'react';
+import logo from './Assets/Hive.png'
 
 
 import firebase from 'firebase/app'; //firebase sdk
@@ -95,7 +96,7 @@ function Chatroom() {
           {messages && messages.map(msg=><ChatMessages key={msg.id} message={msg}/>)}
           <form onSubmit={sendMessage}>
             <input value={formValue} onChange={(e)=>setFormValue(e.target.value)}/>
-            <button type="submit">Bust</button>
+            <button type="submit">Bust🐝</button>
           </form>
       </div>
   )
@@ -115,6 +116,9 @@ const signInWithGoogle=()=>{
 return (
     <>
     <Welcome>
+      <header>
+        <img src={logo}></img>
+      </header>
         <h1>Welcome to Beeger</h1>
         <p>Demo login to try the app, sign in to Google to use it</p>
         <a href="/">Demo</a>
