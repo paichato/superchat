@@ -1,3 +1,5 @@
+import GlobalStyles from './styles/global';
+
 import firebase from 'firebase/app'; //firebase sdk
 import 'firebase/firestore'; //firebase sdk
 import 'firebase/auth'; //firebase sdk
@@ -25,7 +27,7 @@ const firestore=firebase.firestore();
 function App() {
   return (
     <>
-
+      <GlobalStyles/>
       <h1>Hello World</h1>
       <section>
                 {user ? <Chatroom/> : <Login/>}
