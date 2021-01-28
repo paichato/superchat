@@ -124,9 +124,9 @@ return (
       <div id="main">
         <section>
           <img src={light}/>
-        <h1>Welcome to Beeger</h1>
+        <h1>Welcome to BEETHENEVER</h1>
         <p>Demo login to try the app, sign in to Google to use it</p>
-        <a href="/">Demo</a>
+        <a href="/">Demo login</a>
         <button onClick={signInWithGoogle}>Sign in with Google</button>
 
         </section>
