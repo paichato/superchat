@@ -24,10 +24,12 @@ justify-content:space-evenly;
 }
 
 #main{
+    margin-top: 80px;
     justify-content:center;
     align-items:center;
     display: flex;
     grid-template-columns:1fr 1fr;
+
 
     section{
         color:#3A3A3A;
@@ -95,7 +97,22 @@ justify-content:space-evenly;
 
     }
     #right{
-
+        margin-left:200px;
+        img{
+            width:100%;
+            height:100%;
+        }
+        p{
+            width:500px;
+            margin-left:60px;
+            color:#3A3A3A;
+        }
+        small{
+            margin-left: 200px;
+            margin-top:40px;
+            color:#3A3A3A;
+            font-style:italic;
+        }
     }
 }
 

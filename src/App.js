@@ -2,6 +2,7 @@ import GlobalStyles from './styles/global';
 import {useState} from 'react';
 import logo from './Assets/Hive.png';
 import light from './Assets/Light On.png';
+import intro from './Assets/undraw_celebration_0jvk 1.png';
 
 
 import firebase from 'firebase/app'; //firebase sdk
@@ -130,7 +131,13 @@ return (
         <button onClick={signInWithGoogle}>Sign in with Google</button>
 
         </section>
-        <div id="right"></div>
+        <div id="right">
+          <img src={intro}/>
+          {/* <h1>Tired of being bored?</h1> */}
+          <p>Join Beeger today and watch the time past in hours of joy and fun.</p>
+          <small><strong>BEETHANEVER</strong>
+-bigger than ever</small>
+        </div>
         
         
         </div>
