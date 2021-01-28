@@ -1,4 +1,5 @@
 import GlobalStyles from './styles/global';
+import {useState} from 'react'
 
 
 import firebase from 'firebase/app'; //firebase sdk
@@ -55,9 +56,14 @@ function App() {
   );
 }
 function ChatMessages(props) {
-  const{text,uid}=props.message;
-  // const messageClass=uid === auth.currentUser.uid ? 'sent' : 'received';
-  return <p style={{color:'black'}}>{text}</p>
+  const{text,uid, photoURL}=props.message;
+   const messageClass=uid === auth.currentUser.uid ? 'sent' : 'received';
+  return <>
+   <p style={{color:'black'}}>
+     {text}
+   </p>
+   </>
+
 } 
 function Chatroom() {
     
@@ -68,13 +74,29 @@ function Chatroom() {
   //listen to data hook
   const [messages]=useCollectionData(query, {idField: 'id'})
   console.log(messages);
+  const [formValue, setFormValue]=useState('');
+
+  const sendMessage = async(e)=>{
+    e.preventDefault();
+    const {uid, photoURL}=auth.currentUser;
+    await messageRef.add({
+      text: formValue,
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      uid,
+      photoURL
+    })
+
+    setFormValue('');
+  }
   
 
   return (
       <div>
           {messages && messages.map(msg=><ChatMessages key={msg.id} message={msg}/>)}
-          
-          
+          <form onSubmit={sendMessage}>
+            <input value={formValue} onChange={(e)=>setFormValue(e.target.value)}/>
+            <button type="submit">Bust</button>
+          </form>
       </div>
   )
 }
