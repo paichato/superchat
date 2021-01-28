@@ -6,6 +6,9 @@ import {useAuthState} from 'react-firebase-hooks/auth'; //firebase hooks
 import 'firebase/firestore'; //firebase hooks
 import 'firebase/auth'; //firebase hooks
 
+
+//Get files from registing Web app after creating project and 
+//activating database and google auth
 firebase.initializeApp({
   apiKey: "AIzaSyBBCKRwFDD15ShuvFpzM1uFjuzwNfuBGR8",
     authDomain: "superchat-3976c.firebaseapp.com",
@@ -22,7 +25,11 @@ const firestore=firebase.firestore();
 function App() {
   return (
     <>
+
       <h1>Hello World</h1>
+      <section>
+                {user ? <Chatroom/> : <Login/>}
+            </section>
     </>
   );
 }
