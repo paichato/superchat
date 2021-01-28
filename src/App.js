@@ -1,6 +1,7 @@
 import GlobalStyles from './styles/global';
 import {useState} from 'react';
-import logo from './Assets/Hive.png'
+import logo from './Assets/Hive.png';
+import light from './Assets/Light On.png';
 
 
 import firebase from 'firebase/app'; //firebase sdk
@@ -117,13 +118,22 @@ return (
     <>
     <Welcome>
       <header>
-        <img src={logo}></img>
+        <img src={logo}/>
+        <p>BEETHENEVER</p>
       </header>
+      <div id="main">
+        <section>
+          <img src={light}/>
         <h1>Welcome to Beeger</h1>
         <p>Demo login to try the app, sign in to Google to use it</p>
         <a href="/">Demo</a>
         <button onClick={signInWithGoogle}>Sign in with Google</button>
+
+        </section>
+        <div id="right"></div>
         
+        
+        </div>
     </Welcome>
         
     </>
