@@ -13,7 +13,7 @@ import {useAuthState} from 'react-firebase-hooks/auth'; //firebase hooks
 import 'firebase/firestore'; //firebase hooks
 import 'firebase/auth'; //firebase hooks
 import { useCollectionData } from 'react-firebase-hooks/firestore';
-import { ChatMessage } from './Pages/Chatroom/ChatroomElements';
+import { Chating, Chatmessages1 } from './Pages/Chatroom/ChatroomElements';
 import { Welcome } from './Pages/Login/LoginElements';
 
 
@@ -61,12 +61,17 @@ function App() {
 function ChatMessages(props) {
   const{text,uid, photoURL}=props.message;
    const messageClass=uid === auth.currentUser.uid ? 'sent' : 'received';
-  return <>
+  return (
+  <>
+  <Chatmessages1>
+
+  
    <p style={{color:'black'}}>
      {text}
    </p>
+   </Chatmessages1>
    </>
-
+  )
 } 
 function Chatroom() {
     
@@ -94,18 +99,22 @@ function Chatroom() {
   
 
   return (
-      <div>
-          {messages && messages.map(msg=><ChatMessages key={msg.id} message={msg}/>)}
+    <>
+      <Chating >
+      
+          {messages && messages.map(msg=><ChatMessages id="chatmessages" key={msg.id} message={msg}/>)}
           <form onSubmit={sendMessage}>
             <input value={formValue} onChange={(e)=>setFormValue(e.target.value)}/>
             <button type="submit">Bust🐝</button>
           </form>
-      </div>
+      </Chating>
+      
+      </>
   )
 }
 function SignOut(){
 return auth.currentUser && (
-    <button onClick={()=>auth.signOut()}>Sign Out</button>
+    <button style={{position: 'absolute',width:'445px', height:'50px', margin:'20px 100px 0px 500px', border:'none', background:'#2F80ED', color:'white', fontWeight:'bold', borderRadius:'5px', top:'200px'}} onClick={()=>auth.signOut()}>Sign Out</button>
 )
 }
 
@@ -124,7 +133,7 @@ return (
       </header>
       <div id="main">
         <section>
-          <img src={light}/>
+          <img src={light} alt="light icon"/>
         <h1>Welcome to BEETHENEVER</h1>
         <p>Demo login to try the app, sign in to Google to use it</p>
         <a href="/">Demo login</a>
