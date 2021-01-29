@@ -69,7 +69,7 @@ export function ChatMessages(props) {
   <Chatmessages1>
     
 
-  <img src={photoURL}/>
+  <img src={photoURL} alt="user image"/>
    <p >
      
      {text}
@@ -148,7 +148,7 @@ return (
     <>
     <Welcome>
       <header>
-        <img src={logo}/>
+        <img src={logo} alt="logo"/>
         <p>BEETHENEVER</p>
       </header>
       <div id="main">
