@@ -161,7 +161,7 @@ return (
 
         </section>
         <div id="right">
-          <img src={intro}/>
+          <img src={intro} alt="people jumpin"/>
           {/* <h1>Tired of being bored?</h1> */}
           <p>Join Beeger today and watch the time past in hours of joy and fun.</p>
           <small><strong>BEETHANEVER</strong>
