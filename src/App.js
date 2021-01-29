@@ -58,7 +58,7 @@ function App() {
     </>
   );
 }
-function ChatMessages(props) {
+export function ChatMessages(props) {
   const{text,uid, photoURL}=props.message;
    const messageClass=uid === auth.currentUser.uid ? 'sent' : 'received';
   return (
@@ -75,7 +75,7 @@ function ChatMessages(props) {
    </>
   )
 } 
-function Chatroom() {
+export function Chatroom() {
     
     
   const messageRef=firestore.collection('messages');
@@ -125,7 +125,7 @@ function Chatroom() {
       </>
   )
 }
-function SignOut(){
+export function SignOut(){
 return auth.currentUser && (
     <button style={{position: 'absolute',width:'245px', height:'50px',
      margin:'20px 100px 0px 500px', border:'none', background:'#2F80ED',
@@ -134,7 +134,7 @@ return auth.currentUser && (
 )
 }
 
-function Login() {
+export function Login() {
 const signInWithGoogle=()=>{
     const provider=new firebase.auth.GoogleAuthProvider();
     auth.signInWithPopup(provider);
