@@ -114,7 +114,10 @@ function Chatroom() {
 }
 function SignOut(){
 return auth.currentUser && (
-    <button style={{position: 'absolute',width:'445px', height:'50px', margin:'20px 100px 0px 500px', border:'none', background:'#2F80ED', color:'white', fontWeight:'bold', borderRadius:'5px', top:'200px'}} onClick={()=>auth.signOut()}>Sign Out</button>
+    <button style={{position: 'absolute',width:'445px', height:'50px',
+     margin:'20px 100px 0px 500px', border:'none', background:'#2F80ED',
+      color:'white', fontWeight:'bold', borderRadius:'5px', top:'200px'}}
+       onClick={()=>auth.signOut()}>Sign Out</button>
 )
 }
 
