@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.js": "/superchat/static/js/main.0a21e385.chunk.js",
+    "main.js.map": "/superchat/static/js/main.0a21e385.chunk.js.map",
+    "runtime-main.js": "/superchat/static/js/runtime-main.e90fd083.js",
+    "runtime-main.js.map": "/superchat/static/js/runtime-main.e90fd083.js.map",
+    "static/js/2.604b7cd9.chunk.js": "/superchat/static/js/2.604b7cd9.chunk.js",
+    "static/js/2.604b7cd9.chunk.js.map": "/superchat/static/js/2.604b7cd9.chunk.js.map",
+    "index.html": "/superchat/index.html",
+    "static/js/2.604b7cd9.chunk.js.LICENSE.txt": "/superchat/static/js/2.604b7cd9.chunk.js.LICENSE.txt",
+    "static/media/undraw_celebration_0jvk 1.806ebedb.png": "/superchat/static/media/undraw_celebration_0jvk 1.806ebedb.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e90fd083.js",
+    "static/js/2.604b7cd9.chunk.js",
+    "static/js/main.0a21e385.chunk.js"
+  ]
+}
