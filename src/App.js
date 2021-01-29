@@ -17,6 +17,7 @@ import { Chating, Chatmessages1 } from './Pages/Chatroom/ChatroomElements';
 import { Welcome } from './Pages/Login/LoginElements';
 
 
+
 //Get files from registing Web app after creating project and 
 //activating database and google auth
 firebase.initializeApp({
@@ -45,6 +46,7 @@ function App() {
   return (
     <>
       <GlobalStyles/>
+   
      
       <section>
      
@@ -55,6 +57,7 @@ function App() {
                 <SignOut>SignOut</SignOut>
                 </>) : <Login/>}
             </section>
+           
     </>
   );
 }
@@ -72,6 +75,7 @@ export function ChatMessages(props) {
      {text}
    </p>
    </Chatmessages1>
+   
    </>
   )
 } 
@@ -152,7 +156,7 @@ return (
           <img src={light} alt="light icon"/>
         <h1>Welcome to BEETHENEVER</h1>
         <p>Demo login to try the app, sign in to Google to use it</p>
-        <a href="/">Demo login</a>
+        <a href="">Demo login</a>
         <button onClick={signInWithGoogle}>Sign in with Google</button>
 
         </section>
