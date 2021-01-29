@@ -89,15 +89,24 @@ function Chatroom() {
   const sendMessage = async(e)=>{
     e.preventDefault();
     const {uid, photoURL}=auth.currentUser;
-    await messageRef.add({
-      text: formValue,
-      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-      uid,
-      photoURL
-    })
+    if(formValue!==''){
+      await messageRef.add({
+        text: formValue,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        uid,
+        photoURL
+      })
+  
+      setFormValue('');
+    }else{
+      return(
+        
+        <span style={{color:'#D04040', position: 'absolute', fontSize:'18px', zIndex:'4'}}>Please write something</span>
+      )
+    }
 
-    setFormValue('');
-  }
+    }
+    
   
 
   return (
@@ -108,7 +117,7 @@ function Chatroom() {
       
           {messages && messages.map(msg=><ChatMessages id="chatmessages" key={msg.id} message={msg}/>)}
           <form onSubmit={sendMessage}>
-            <input value={formValue} onChange={(e)=>setFormValue(e.target.value)}/>
+            <input placeholder="Say somthing nice" value={formValue} onChange={(e)=>setFormValue(e.target.value)}/>
             <button type="submit">Bust🐝</button>
           </form>
       </Chating>
