@@ -64,9 +64,11 @@ function ChatMessages(props) {
   return (
   <>
   <Chatmessages1>
+    
 
-  
-   <p style={{color:'black'}}>
+  <img src={photoURL}/>
+   <p >
+     
      {text}
    </p>
    </Chatmessages1>
@@ -100,6 +102,7 @@ function Chatroom() {
 
   return (
     <>
+    <h1>Say Something Nice</h1>
       <Chating >
       
           {messages && messages.map(msg=><ChatMessages id="chatmessages" key={msg.id} message={msg}/>)}
