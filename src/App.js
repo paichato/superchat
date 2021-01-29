@@ -69,7 +69,7 @@ export function ChatMessages(props) {
   <Chatmessages1>
     
 
-  <img src={photoURL} alt="user image"/>
+  <img src={photoURL} alt="user"/>
    <p >
      
      {text}
@@ -139,6 +139,7 @@ return auth.currentUser && (
 }
 
 export function Login() {
+  const Demologin=()=>{return (<Chatroom/>)}
 const signInWithGoogle=()=>{
     const provider=new firebase.auth.GoogleAuthProvider();
     auth.signInWithPopup(provider);
@@ -156,7 +157,7 @@ return (
           <img src={light} alt="light icon"/>
         <h1>Welcome to BEETHENEVER</h1>
         <p>Demo login to try the app, sign in to Google to use it</p>
-        <a href="">Demo login</a>
+        <a href="/" onClick={Demologin}>Demo login</a>
         <button onClick={signInWithGoogle}>Sign in with Google</button>
 
         </section>
